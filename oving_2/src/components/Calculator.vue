@@ -45,7 +45,8 @@ export default {
       row_2_elements: [7,8,9,"x"],
       row_3_elements: [4,5,6,"+"],
       row_4_elements: [1,2,3,"-"],
-      row_5_elements: [0,"="]
+      row_5_elements: [0,"="],
+      equation: ""
     }
   },
 
@@ -64,6 +65,7 @@ export default {
         case 'C':
             this.buffer = "0";
             this.runningTotal = 0;
+            this.equation = "";
             break;
         case '=':
             if(this.previousOperator === null){
@@ -73,12 +75,14 @@ export default {
             this.previousOperator = null;
             this.buffer = this.runningTotal;
             this.runningTotal = 0;
+            this.sendEquation(this.equation);
             break;
         case '+':
         case '-':
         case 'x':
         case '/':
             this.handleMath(symbol);
+            this.equation += symbol;
             break;
       }
     },
@@ -122,7 +126,12 @@ export default {
         }
         else{
           this.buffer += numberString + "";
+          this.equation = this.equation + numberString + "";
         }
+    },
+
+    sendEquation(){
+      this.$refs.History.insertEquation();
     }
 
   }

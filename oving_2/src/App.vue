@@ -1,14 +1,19 @@
 <template>
-  <Calculator/>
+  <div class="container">
+    <div class="calc-div"><Calculator/></div>
+    <div><History/></div>
+  </div>
 </template>
 
 <script>
 import Calculator from './components/Calculator.vue'
+import History from './components/History.vue';
 
 export default {
   name: 'App',
   components: {
-    Calculator
+    Calculator,
+    History
   }
 }
 </script>
@@ -24,6 +29,14 @@ body{
     display: flex;
     height: inherit;
     justify-content: center;
-  }
+}
+
+.container{
+  display: flex;
+}
+
+.calc-div{
+  padding-right: 40px;
+}
 </style>
 
