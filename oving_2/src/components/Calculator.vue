@@ -5,7 +5,7 @@
         </section>
         <section class="calc-buttons">
             <div class="calc-button-row">
-                <button class="calc-button" v-for = "e in row_1_elements" :key="e" :class ="{double: e == row_1_elements[0]}" @click="buttonClick(e)">{{ e }}</button>
+                <button class="calc-button" v-for = "e in row_1_elements" :key="e" :class ="{triple: e == row_1_elements[0]}" @click="buttonClick(e)">{{ e }}</button>
             </div>
 
             <div class="calc-button-row">
@@ -41,7 +41,7 @@ export default {
       buffer: "0",
       runningTotal: 0,
       previousOperator: null,
-      row_1_elements: ["C","←","/"],
+      row_1_elements: ["C","/"],
       row_2_elements: [7,8,9,"x"],
       row_3_elements: [4,5,6,"+"],
       row_4_elements: [1,2,3,"-"],
@@ -55,13 +55,7 @@ export default {
           this.handleSymbol(value);
       }
       else{
-        if(this.buffer === "0"){
-        this.buffer = value;
-        }
-        else{
-          this.buffer += value + "";
-        }
-        //this.handleNumber(value);
+        this.handleNumber(value);
       }
     },
 
@@ -79,14 +73,6 @@ export default {
             this.previousOperator = null;
             this.buffer = this.runningTotal;
             this.runningTotal = 0;
-            break;
-        case '←':
-            if(this.buffer.length === 1){
-              this.buffer = "0";
-            }
-            else{
-              this.buffer = this.buffer.toString(0, this.buffer.length - 1);
-            }
             break;
         case '+':
         case '-':
@@ -133,10 +119,10 @@ export default {
     handleNumber(numberString){
       if(this.buffer === "0"){
         this.buffer = numberString;
-      }
-      else{
-        this.buffer += numberString;
-      }
+        }
+        else{
+          this.buffer += numberString + "";
+        }
     }
 
   }
@@ -144,7 +130,6 @@ export default {
 
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .calculator{
     backdrop-filter: blur(5.5px);
@@ -198,10 +183,6 @@ export default {
 
 .calc-button:hover{
     opacity: 0.6;
-}
-
-.double{
-    flex-basis: 47%;
 }
 
 .triple{
