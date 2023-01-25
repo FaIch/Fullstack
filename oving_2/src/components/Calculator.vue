@@ -41,12 +41,12 @@ export default {
       buffer: "0",
       runningTotal: 0,
       previousOperator: null,
+      current_equation: "",
       row_1_elements: ["C","/"],
       row_2_elements: [7,8,9,"x"],
       row_3_elements: [4,5,6,"+"],
       row_4_elements: [1,2,3,"-"],
-      row_5_elements: [0,"="],
-      equation: ""
+      row_5_elements: [0,"="]
     }
   },
 
@@ -65,7 +65,7 @@ export default {
         case 'C':
             this.buffer = "0";
             this.runningTotal = 0;
-            this.equation = "";
+            this.current_equation = "";
             break;
         case '=':
             if(this.previousOperator === null){
@@ -73,16 +73,25 @@ export default {
             }
             this.flushOperation(parseInt(this.buffer));
             this.previousOperator = null;
+            this.previousOperator = null;
             this.buffer = this.runningTotal;
             this.runningTotal = 0;
-            this.sendEquation(this.equation);
+
+            if(!this.isNumber(this.current_equation.charAt(0))){
+              this.current_equation = "Ans " + this.current_equation + " = " + this.buffer;
+            }
+            else{
+            this.current_equation = this.current_equation + " = " + this.buffer + "";
+            }
+            this.$emit("addEquation", this.current_equation);
+            this.current_equation = "";
             break;
         case '+':
         case '-':
         case 'x':
         case '/':
             this.handleMath(symbol);
-            this.equation += symbol;
+            this.current_equation = this.current_equation + " " + symbol + " ";
             break;
       }
     },
@@ -102,7 +111,6 @@ export default {
       }
       this.previousOperator = symbol;
       this.buffer = '0';
-
     },
 
     flushOperation(intBuffer){
@@ -123,17 +131,17 @@ export default {
     handleNumber(numberString){
       if(this.buffer === "0"){
         this.buffer = numberString;
+        this.current_equation = this.current_equation + numberString + "";
         }
         else{
           this.buffer += numberString + "";
-          this.equation = this.equation + numberString + "";
+          this.current_equation = this.current_equation + numberString + "";
         }
     },
-
-    sendEquation(){
-      this.$refs.History.insertEquation();
+    
+    isNumber(char) {
+      return /^\d$/.test(char);
     }
-
   }
 }
 

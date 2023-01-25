@@ -1,24 +1,19 @@
 <template>
     <div id="history-box">
-        <p>25 x 25 = 120</p>
+        <ul>
+            <li v-for="(equation, index) in equation_list" :key="index">
+                {{ equation }}
+            </li>
+        </ul>
     </div>    
 </template>
 
 <script>
 export default{
     name: "History",
-    props: {
-        msg: String
-    },
-    
-    methods: {
-        insertEquation(equation){
-            var element = document.createElement("p");
-            element.innerText = equation;
-            document.getElementById('history-box').appendChild(element);
-        }
-    }
-
+    props: [
+        "equation_list"
+    ]
 }
 </script>
 
@@ -30,9 +25,11 @@ export default{
         border-style: solid;
         border-color: black;
         border-width: 2px;
+        overflow: auto;
     }
 
-    p{
-        font-size: 20px;
+    li{
+        list-style-type: none;
+        font-size: 18px;
     }
 </style>

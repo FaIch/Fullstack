@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div class="calc-div"><Calculator/></div>
-    <div><History/></div>
+    <div class="calc-div"><Calculator @addEquation="getEquation"/></div>
+    <div><History :equation_list="all_equations"/></div>
   </div>
 </template>
 
@@ -14,6 +14,17 @@ export default {
   components: {
     Calculator,
     History
+  },
+
+  data: () => {
+    return {
+      all_equations: []
+    }
+  },
+  methods: {
+    getEquation(sent_equation){
+      this.all_equations.push(sent_equation);
+    }
   }
 }
 </script>
