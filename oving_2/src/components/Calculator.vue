@@ -53,7 +53,7 @@ export default {
   methods: {
     buttonClick(value){
       if(isNaN(value)){
-          this.handleSymbol(value);
+        this.handleSymbol(value);
       }
       else{
         this.handleNumber(value);
@@ -91,7 +91,15 @@ export default {
         case 'x':
         case '/':
             this.handleMath(symbol);
+            if(this.current_equation.length > 0 && !this.isNumber(this.current_equation.charAt(this.current_equation.length-1))){
+              return;
+            }
+            else if(this.current_equation.length === 0){
+              return;
+            }
+            else{
             this.current_equation = this.current_equation + " " + symbol + " ";
+            }
             break;
       }
     },
