@@ -6,11 +6,15 @@ export default createStore({
     email: "",
   },
   getters: {
-  },
+
+    },
   mutations: {
-    SET_DATA(state, name, email){
+    SET_NAME(state, name){
         state.name = name;
-        state.email = email;
+    },
+
+    SET_EMAIL(state, email){
+      state.email = email;
     }
   },
   actions: {

@@ -8,6 +8,7 @@
 <script>
 import Calculator from '@/components/Calculator.vue'
 import History from '@/components/History.vue';
+import axios from 'axios';
 
 export default {
   name: 'CalculatorView',
@@ -25,6 +26,12 @@ export default {
     getEquation(sent_equation){
       this.all_equations.push(sent_equation);
     }
+  },
+  created(){
+    axios.get('https://my-json-server.typicode.com/FaIch/db/events')
+    .then(response =>{
+      console.log("data:", response.data)
+    })
   }
 }
 </script>
