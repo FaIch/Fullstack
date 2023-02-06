@@ -27,8 +27,7 @@
 <script>
 import BaseInput from "@/components/BaseInput.vue"
 import axios from "axios";
-import { useField} from 'vee-validate';
-//spør om bruk av validering uten setup(typescript)
+
 export default{
     components: {
         BaseInput,
@@ -42,7 +41,7 @@ export default{
                 message: "",
             },
             post_result: "",
-            email_result: ""
+            email_result: "",
         }
     },
     methods: {
@@ -54,7 +53,9 @@ export default{
                 this.inputs
             )
             .then(
-                this.post_result = "Success!"
+                this.post_result = "Success!",
+                this.inputs.name = this.$store.state.name,
+                this.inputs.email = this.$store.state.email
             )
             .catch(error =>{
                 this.post_result = error
