@@ -25,10 +25,13 @@
 </template>
 
 <script>
-import BaseInput from "@/components/BaseInput.vue"
+import BaseInput from "./BaseInput.vue"
 import axios from "axios";
 
 export default{
+    props: {
+        msg: String
+    },
     components: {
         BaseInput,
     },
