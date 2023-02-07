@@ -1,6 +1,7 @@
 <template>
     <div id="formBox" @submit.prevent="submitData">
         <BaseInput
+        id="nameInput"
         v-model="inputs.name"
         label="Name"
         type="text"
@@ -8,6 +9,7 @@
 
         <BaseInput
         v-model="inputs.email"
+        id="emailInput"
         label="Email"
         type="text"
         />
@@ -15,11 +17,12 @@
 
         <BaseInput
         v-model="inputs.message"
+        id="messageInput"
         label="Message"
         type="text"
         />
 
-        <button @click="validateEmail" :disabled="isDisabled" type="submit">Submit</button>
+        <button id="submitButton" @click="validateEmail" :disabled="isDisabled" type="submit">Submit</button>
         <div id="resultdiv">{{ post_result }}</div>
     </div>
 </template>
@@ -58,7 +61,8 @@ export default{
             .then(
                 this.post_result = "Success!",
                 this.inputs.name = this.$store.state.name,
-                this.inputs.email = this.$store.state.email
+                this.inputs.email = this.$store.state.email,
+                this.inputs.message = ""
             )
             .catch(error =>{
                 this.post_result = error

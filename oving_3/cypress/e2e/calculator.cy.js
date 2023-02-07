@@ -7,7 +7,7 @@ describe('calculator', () => {
     cy.visit('/')
   })
 
-  it('Finds the component', () => {
+  it('Finds objects', () => {
     cy.get('section').should('have.class', 'screen')
     cy.get('#5').should('have.text', '5')
   })
