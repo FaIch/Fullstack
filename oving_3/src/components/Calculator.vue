@@ -5,23 +5,23 @@
           </section>
           <section class="calc-buttons">
               <div class="calc-button-row">
-                  <button class="calc-button" v-for = "e in row_1_elements" :key="e" :class ="{triple: e == row_1_elements[0]}" @click="buttonClick(e)">{{ e }}</button>
+                  <button class="calc-button" v-for = "e in row_1_elements" v-bind:id = "e" :key="e" :class ="{triple: e == row_1_elements[0]}" @click="buttonClick(e)">{{ e }}</button>
               </div>
   
               <div class="calc-button-row">
-                  <button class="calc-button" v-for = "e in row_2_elements" :key="e" @click="buttonClick(e)">{{ e }}</button>
+                  <button class="calc-button" v-for = "e in row_2_elements" v-bind:id = "e" :key="e" @click="buttonClick(e)">{{ e }}</button>
               </div>
   
               <div class="calc-button-row">
-                <button class="calc-button" v-for = "e in row_3_elements" :key="e" @click="buttonClick(e)">{{ e }}</button>
+                <button class="calc-button" v-for = "e in row_3_elements" v-bind:id = "e" :key="e" @click="buttonClick(e)">{{ e }}</button>
               </div>
   
               <div class="calc-button-row">
-                <button class="calc-button" v-for = "e in row_4_elements" :key="e" @click="buttonClick(e)">{{ e }}</button>
+                <button class="calc-button" v-for = "e in row_4_elements" v-bind:id = "e" :key="e" @click="buttonClick(e)">{{ e }}</button>
               </div>
   
               <div class="calc-button-row">
-                <button class="calc-button" v-for = "e in row_5_elements" :key="e" :class ="{triple: e == row_5_elements[0]}" @click="buttonClick(e)">{{ e }}</button>
+                <button class="calc-button" v-for = "e in row_5_elements" v-bind:id = "e" :key="e" :class ="{triple: e == row_5_elements[0]}" @click="buttonClick(e)">{{ e }}</button>
               </div>
           </section>
       </div>

@@ -25,6 +25,7 @@
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/test-utils": "^2.2.10",
+    "cypress": "^12.5.1",
     "jsdom": "^21.1.0",
     "vitest": "^0.28.4"
   },
