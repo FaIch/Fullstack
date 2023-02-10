@@ -27,12 +27,7 @@ export default {
       this.all_equations.push(sent_equation);
     }
   },
-  created(){
-    axios.get('https://my-json-server.typicode.com/FaIch/db/events')
-    .then(response =>{
-      console.log("data:", response.data)
-    })
-  }
+  
 }
 </script>
 <style>

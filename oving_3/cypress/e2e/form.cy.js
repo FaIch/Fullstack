@@ -30,4 +30,12 @@ describe('form', () => {
         cy.get('#nameInput').should("have.value","TestName")
         cy.get('#messageInput').should("be.empty")
     })
+
+    it('should display success upon correct data input', ()=>{
+        cy.get('#nameInput').type("TestName")
+        cy.get('#emailInput').type('test@test.com')
+        cy.get('#messageInput').type("test message")
+        cy.get('#submitButton').click()
+        cy.get('#resultdiv').should('have.text',"Success!")
+    })
 })
