@@ -6,11 +6,11 @@
 </template>
 
 <script>
-import Calculator from '@/components/Calculator.vue'
-import History from '@/components/History.vue';
+import Calculator from './components/Calculator.vue'
+import History from './components/History.vue';
 
 export default {
-  name: 'CalculatorView',
+  name: 'App',
   components: {
     Calculator,
     History
@@ -25,8 +25,7 @@ export default {
     getEquation(sent_equation){
       this.all_equations.push(sent_equation);
     }
-  },
-  
+  }
 }
 </script>
 <style>
