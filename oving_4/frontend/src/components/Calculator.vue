@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { postEquation } from '../utils/httputils'
 export default {
   name: "Calculator",
   props: {
@@ -52,7 +53,12 @@ export default {
 
   methods: {
     buttonClick(value){
-      
+      if(isNaN(value)){
+        this.handleSymbol(value);
+      }
+      else{
+        this.handleNumber(value);
+      }
     },
 
     handleSymbol(value){
@@ -65,11 +71,7 @@ export default {
         if(this.previousOperator === null){
           return;
         }
-        this.previousOperator = null;
-        this.buffer = this.runningTotal;
-        this.runningTotal = 0;
-        //TODO legg inn backend logikk
-        this.current_equation = "";
+        this.equals();
       }
       else{
         if(this.current_equation.length > 0 && !this.isNumber(this.current_equation.charAt(this.current_equation.length-1))){
@@ -78,9 +80,10 @@ export default {
         else if(this.current_equation.length === 0){
           return;
         }
-
-
         this.current_equation += value + "";
+
+        this.buffer = "0"
+        this.previousOperator = value;
       }
     },
 
@@ -93,6 +96,21 @@ export default {
         this.buffer += number + "";
         this.current_equation = this.current_equation + number + "";
       }
+    },
+
+    async equals(){
+      
+      postEquation(this.current_equation).then(
+        (response) =>{
+          this.buffer = response.data.solution;
+        }
+      ).catch((error)=> {
+        alert(error.response)
+      });
+
+      this.previousOperator = null;
+      this.current_equation = this.buffer;
+      
     },
     
     isNumber(char) {

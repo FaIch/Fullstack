@@ -8,7 +8,7 @@
         <version>3.0.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>edu.ntnu</groupId>
+    <groupId>edu.ntnu.idatt2105</groupId>
     <artifactId>back_end</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>back_end</name>
@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
         <dependency>
@@ -32,6 +32,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 

@@ -1,7 +1,8 @@
-package edu.ntnu.back_end;
+package edu.ntnu.calculator.back_end;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 @SpringBootApplication
 public class BackEndApplication {
