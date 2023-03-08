@@ -83,7 +83,6 @@
               else{
               this.current_equation = this.current_equation + " = " + this.buffer + "";
               }
-              this.$emit("addEquation", this.current_equation);
               this.current_equation = "";
               break;
           case '+':

@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <router-link to="/calculator">Calculator</router-link> |
-    
+    <router-link to="/">Login</router-link> |
+    <router-link to="/form">Sign up</router-link>
   </nav>
   <router-view/>
 </template>
@@ -20,7 +20,7 @@
 }
 
 nav {
-  padding: 30px;
+  padding: 30px 30px 0 30px;
 }
 
 nav a {

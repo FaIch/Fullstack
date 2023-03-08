@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <div class="calc-div"><Calculator @addEquation="getEquation"/></div>
-    <div><History :equation_list="all_equations"/></div>
+    <div class="calc-div"><Calculator/></div>
+    <div><History/></div>
   </div>
 </template>
 
 <script>
-import Calculator from '@/components/Calculator.vue'
-import History from '@/components/History.vue';
+import Calculator from '../components/Calculator.vue'
+import History from '../components/History.vue';
 
 export default {
   name: 'CalculatorView',
@@ -22,9 +22,7 @@ export default {
     }
   },
   methods: {
-    getEquation(sent_equation){
-      this.all_equations.push(sent_equation);
-    }
+    
   },
   
 }
