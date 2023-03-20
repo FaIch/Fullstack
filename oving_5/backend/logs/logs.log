@@ -1,0 +1,19 @@
+2023-03-02T14:35:32.409+01:00  INFO 16256 --- [restartedMain] e.n.c.back_end.BackEndApplication        : Starting BackEndApplication using Java 17.0.6 with PID 16256 (C:\Users\Joakim\IdeaProjects\back_end\target\classes started by Joakim in C:\Users\Joakim\IdeaProjects\back_end)
+2023-03-02T14:35:32.410+01:00  INFO 16256 --- [restartedMain] e.n.c.back_end.BackEndApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-03-02T14:35:32.435+01:00  INFO 16256 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-02T14:35:32.435+01:00  INFO 16256 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-02T14:35:32.904+01:00  INFO 16256 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-03-02T14:35:32.909+01:00  INFO 16256 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-02T14:35:32.910+01:00  INFO 16256 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-02T14:35:32.951+01:00  INFO 16256 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-02T14:35:32.952+01:00  INFO 16256 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 516 ms
+2023-03-02T14:35:33.130+01:00  INFO 16256 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-03-02T14:35:33.154+01:00  INFO 16256 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-03-02T14:35:33.159+01:00  INFO 16256 --- [restartedMain] e.n.c.back_end.BackEndApplication        : Started BackEndApplication in 1.0 seconds (process running for 1.386)
+2023-03-02T14:35:37.228+01:00  INFO 16256 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-02T14:35:37.228+01:00  INFO 16256 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-02T14:35:37.229+01:00  INFO 16256 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-02T14:35:37.287+01:00  INFO 16256 --- [http-nio-8090-exec-2] e.n.c.back_end.controllers.Controller    : Data received: 8x8
+2023-03-02T14:35:37.288+01:00  INFO 16256 --- [http-nio-8090-exec-2] e.n.c.back_end.controllers.Controller    : Result: 64.0
+2023-03-02T14:35:51.117+01:00  INFO 16256 --- [http-nio-8090-exec-3] e.n.c.back_end.controllers.Controller    : Data received: 7+3
+2023-03-02T14:35:51.118+01:00  INFO 16256 --- [http-nio-8090-exec-3] e.n.c.back_end.controllers.Controller    : Result: 10.0
