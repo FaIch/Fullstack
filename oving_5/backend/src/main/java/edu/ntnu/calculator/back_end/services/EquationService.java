@@ -4,7 +4,7 @@ import edu.ntnu.calculator.back_end.models.Equation;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Solver {
+public class EquationService {
 
     public void solve(Equation equation){
         String equationString = equation.getEquation();
